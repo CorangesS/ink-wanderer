@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#eeeee1"><title>墨野行 · 一卷山水，一场修行</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<main id="app">
+<canvas id="world" aria-label="墨野行水墨生存游戏，使用 WASD 或方向键移动"></canvas>
+<div class="paper-grain"></div><div class="vignette"></div>
+<header class="topbar">
+  <a class="brand" href="#" id="brand"><span class="seal">墨<br>野</span><span class="brand-name">墨野行<small>INK WANDERER</small></span></a>
+  <div class="chapter" id="chapter"><span class="chapter-mark">壹</span><span>山色入墨<small>一卷山水，一场修行</small></span></div>
+  <nav><button class="icon-button" id="sound" aria-label="开启声音" title="声音"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5m5 4 5 6m0-6-5 6"/></svg></button><button class="icon-button" id="help" aria-label="玩法说明" title="玩法说明">?</button><button class="icon-button hidden" id="pause" aria-label="暂停游戏" title="暂停 Esc"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button></nav>
+</header>
+<section id="home" class="home">
+  <div class="home-copy"><div class="eyebrow"><span></span> 水墨生存 · 自在修行</div><h1>一笔入江湖<span>万墨皆可平。</span></h1><p class="intro">山间有墨，墨中有灵。<br>执一支青竹笔，闯一卷活过来的山水。</p><button class="primary start-button" id="start"><span>入画</span><span class="button-line"></span><span class="arrow">↗</span></button><div class="home-controls"><span class="key-group"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>移动</span><i></i><span>自动挥毫</span><i></i><span>空格 闪身</span></div><div class="best" id="best"></div></div>
+  <div class="vertical-poem">不问来处<span>只向青山</span><b>行</b></div>
+  <div class="scene-label"><span class="tiny-line"></span><span>第一境 · 青岚渡<small>QINGLAN CROSSING</small></span></div>
+  <div class="home-footer"><span>一人 · 一笔 · 六重墨境</span><span>戴上耳机，听见山水 <span class="music-note">♫</span></span></div>
+</section>
+<section id="hud" class="hidden">
+  <div class="player-card"><div class="portrait">行</div><div class="player-data"><div class="stat-line"><b>执笔行者</b><span id="hp-label">100 / 100</span></div><div class="health-track"><div id="health-fill"></div></div><div class="stat-line sub"><span id="level-label">境界 一</span><span id="coin-label">灵墨 0</span></div></div></div>
+  <div class="wave-hud"><span id="wave-label">第 一 波 / 六</span><div id="time-label">00:35</div><div class="wave-track"><div id="wave-fill"></div></div><small id="wave-hint">守住心神，墨灵将至</small></div>
+  <div class="run-stats"><span>散墨 <b id="kills-label">0</b></span><span>修为 <b id="xp-label">0 / 10</b></span></div>
+  <div class="bottom-hud"><div class="weapons" id="weapons"></div><div class="dash-ui"><div class="dash-ring" id="dash-ring">↝</div><div><span>踏墨无痕</span><small id="dash-label">空格 · 闪身</small></div></div><div class="play-guide"><kbd>WASD</kbd> 移动 <span>·</span> 自动攻击 <span>·</span> <kbd>ESC</kbd> 暂停</div></div>
+</section>
+<div id="toast" role="status"></div>
+<section class="modal-layer hidden" id="modal"><div class="modal-paper" id="modal-content"></div></section>
+<div class="touch-controls hidden" id="touch-controls"><div id="joystick"><div id="stick"></div></div><button id="touch-dash" aria-label="闪身">闪</button></div>
+<div class="loading" id="loading"><span>山水徐徐展开</span><i></i></div>
+</main>
+<script src="game.js"></script>
+</body></html>
